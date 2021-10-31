@@ -1,8 +1,9 @@
 import Image from 'next/image'
-import { SearchIcon } from '@heroicons/react/outline'
+import { SearchIcon, PaperAirplaneIcon, PlusCircleIcon, UserGroupIcon, HeartIcon, MenuIcon } from '@heroicons/react/outline'
+import { HomeIcon } from '@heroicons/react/solid'
 const Header = () => {
     return (
-        <div>
+        <div className="bg-white shadow-sm border-b sticky top-0 z-50">
             <div className="flex justify-between max-w-6xl mx-5 lg:mx-auto">
 
                 {/* Left */}
@@ -21,18 +22,35 @@ const Header = () => {
                     />
                 </div>
                 {/* Middle  Search Input field*/}
-                <div className="relative mt-1 p-3  ">
-                    <div className=" pl-3 absolute inset-y-0 flex items-center pointer-events-none">
-                        <SearchIcon className=" h-5 w-5 text-gray-500 "/>
+                <div className="max-w-xs ">
+                    <div className="relative mt-1 p-3  ">
+                        <div className=" pl-3 absolute inset-y-0 flex items-center pointer-events-none">
+                            <SearchIcon className=" h-5 w-5 text-gray-500 " />
+                        </div>
+                        <input className="bg-gray-50 w-full 
+                            border-gray-300 focus:ring-black 
+                            pl-10  focus:border-black  rounded-md
+                            sm:text-sm block"
+                            type="text" placeholder="Search" />
                     </div>
-                    <input className="bg-gray-50 w-full 
-                        border-gray-300 focus:ring-black 
-                        pl-10  focus:border-black  rounded-md
-                        sm:text-sm" 
-                        type="text" placeholder="Search"/>
                 </div>
 
                 {/* Right */}
+
+                <div className="flex items-center justify-end  space-x-4">
+                    <HomeIcon className="navBtn" />
+                    <MenuIcon className="h-6 md:hidden cursor-pointer" />
+                    <div className="relative navBtn">
+                        <PaperAirplaneIcon className="navBtn rotate-45" />
+                        <div className="absolute -top-1 -right-2 animate-pulse bg-red-500 rounded-full h-5 w-5 flex
+                        items-center text-xs justify-center text-white">3</div>
+                    </div>
+                    <UserGroupIcon className="navBtn" />
+                    <HeartIcon className="navBtn" />
+                    <img
+                        className="h-10  rounded-full cursor-pointer object-cover" src="saif.jpg" alt="Avtar" />
+                </div>
+
             </div>
         </div>
     )
