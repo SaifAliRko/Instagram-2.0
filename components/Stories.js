@@ -14,8 +14,8 @@ const Stories = () => {
     return (
         <div className="
             flex overflow-x-scroll 
-            space-x-2 p-6 mt-6 border-gray-200 
-            rounded-sm">
+            space-x-2 p-6 mt-6 border-gray-200 border 
+            rounded-sm scrollbar-thin scrollbar-thumb-black">
             {suggestions.map(profile => (
                 <Story 
                     key={profile.id} 

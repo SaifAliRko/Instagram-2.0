@@ -7,7 +7,8 @@ const Header = () => {
             <div className="flex justify-between max-w-6xl mx-5 lg:mx-auto">
 
                 {/* Left */}
-                <div className="relative w-24   hidden lg:inline-grid cursor-pointer">
+                <div className="
+                    relative w-24   hidden lg:inline-grid cursor-pointer">
                     <Image
                         src="https://links.papareact.com/ocw"
                         layout="fill"

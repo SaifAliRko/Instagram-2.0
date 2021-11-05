@@ -13,3 +13,11 @@ const Story = ({username,img}) => {
 }
 
 export default Story
+// import {
+//     BookmarkIcon,
+//     ChatIcon,
+//     DotsHorizontalIcon,
+//     EmojiHappyIcon,
+//     HeartIcon,
+//     PaperAirplaneIcon
+// } from "@heroicons/react/outline"
