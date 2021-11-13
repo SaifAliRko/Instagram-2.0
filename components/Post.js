@@ -45,7 +45,7 @@ const Post = ({id,username,img,userImage,caption}) => {
                 <input className="border-none flex-1 focus:ring-0 outline-none" 
                     placeholder="Add a comment..."
                     type="text" />
-                <button className="font-semibold text-blue-400">Post</button>
+                <button className=" font-semibold text-blue-400">Post</button>
             </form>
         </div>
     )
