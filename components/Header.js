@@ -9,16 +9,19 @@ import {
 } from "@heroicons/react/outline";
 import { HomeIcon } from "@heroicons/react/solid";
 import { signIn, signOut, useSession } from "next-auth/react";
+import { useRouter } from "next/dist/client/router";
 const Header = () => {
   const { data: session, status } = useSession();
   console.log(`session`, session);
+  const router = useRouter();
   return (
     <div className="bg-white shadow-sm border-b sticky top-0 z-50">
       <div className="flex justify-between max-w-6xl mx-5 lg:mx-auto">
         {/* Left */}
         <div
+          onClick={()=>router.push("/")}
           className="
-                    relative w-24   hidden lg:inline-grid cursor-pointer"
+          relative w-24   hidden lg:inline-grid cursor-pointer"
         >
           <Image
             src="https://links.papareact.com/ocw"
@@ -26,7 +29,9 @@ const Header = () => {
             objectFit="contain"
           />
         </div>
-        <div className="relative w-10 lg:hidden cursor-pointer flex-shrink-0">
+        <div
+          onClick={()=>router.push("/")} 
+          className="relative w-10 lg:hidden cursor-pointer flex-shrink-0">
           <Image
             src="https://links.papareact.com/jjm"
             layout="fill"
@@ -53,12 +58,13 @@ const Header = () => {
         {/* Right */}
 
         <div className="flex items-center justify-end  space-x-4">
-          <HomeIcon className="navBtn" />
+          <HomeIcon onClick={()=>router.push('/')} className="navBtn" />
           <MenuIcon className="h-6 md:hidden cursor-pointer" />
 
           {session ? (
             <>
               <div className="relative navBtn">
+
                 <PaperAirplaneIcon className="navBtn rotate-45" />
                 <div
                   className="absolute -top-1 -right-2 animate-pulse bg-red-500 rounded-full h-5 w-5 flex
