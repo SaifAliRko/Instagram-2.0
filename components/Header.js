@@ -10,9 +10,11 @@ import {
 import { HomeIcon } from "@heroicons/react/solid";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/dist/client/router";
+import { modalState } from "../atoms/modalAtoms";
 const Header = () => {
   const { data: session, status } = useSession();
   console.log(`session`, session);
+  const  [open,setOpen] = useRecoilState(modalState)
   const router = useRouter();
   return (
     <div className="bg-white shadow-sm border-b sticky top-0 z-50">
