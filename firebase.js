@@ -18,7 +18,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
-const db = getFirestore();
-const storage = getStorage();
+const db = getFirestore();    // for collections stuff
+const storage = getStorage();  // for uploading images or so
 
 export { app, db, storage };

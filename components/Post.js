@@ -8,24 +8,26 @@ import {
 } from "@heroicons/react/outline"
 
 import { HeartIcon as HeartIconFilled } from '@heroicons/react/outline'
+import { useSession } from "next-auth/react"
 
-
-const Post = ({id,username,img,userImage,caption}) => {
+const Post = ({id,username,img,userImg,caption}) => {
+    const {data:session}=useSession()
     return (
         <div className="bg-white py-7 rounded-sm border">
             {/* Header */}
             <div className="flex items-center p-5 border">
                 <img 
-                    className="h-12 w-12
-                        border p-1 m-3 rounded-full
-                    "
-                    src={userImage} alt="" />
+                    className=
+                    "h-12 w-12 border p-1 m-3 rounded-full "
+                    src={userImg} alt="" />
             <p className="flex-1 font-bold">{username}</p>
             <DotsHorizontalIcon className="btn"/>
             </div>
             {/* image */}
             <img className="w-full object-cover" src={img} alt="" />
             {/* buttons */}
+            {session&&(
+
             <div className="flex justify-between px-4 pt-4">
                 <div className="flex space-x-4">
                     <HeartIcon className="btn"/>
@@ -34,12 +36,15 @@ const Post = ({id,username,img,userImage,caption}) => {
                 </div>
                 <BookmarkIcon className="btn"/>
             </div>
+            )}
             {/* caption */}
             <p className="p-5 truncate">
                 <span className="font-bold mr-1">{username}</span>
                 {caption}</p>
             {/* comments */}
             {/* input box */}
+            {session&&(
+
             <form className="flex items-center p-4" action="">
                 <EmojiHappyIcon className="h-7"/>
                 <input className="border-none flex-1 focus:ring-0 outline-none" 
@@ -47,6 +52,7 @@ const Post = ({id,username,img,userImage,caption}) => {
                     type="text" />
                 <button className=" font-semibold text-blue-400">Post</button>
             </form>
+            )}
         </div>
     )
 }

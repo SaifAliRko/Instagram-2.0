@@ -1,5 +1,5 @@
 import "../styles/global.css";
-import {Recoil} from 'recoil';
+import {RecoilRoot} from 'recoil';
 import { SessionProvider } from "next-auth/react";
 
 export default function App({
