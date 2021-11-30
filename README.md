@@ -1,6 +1,6 @@
 
 
-<h1 align="center"> Project Management</h1>
+<h1 align="center"> Instagram 2.0 </h1>
 
  ## Built With
 <div style="display: flex">
